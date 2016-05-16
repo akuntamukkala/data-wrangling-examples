@@ -1,0 +1,12 @@
+splitrows col: column1 on: '\n'
+header
+extract col: sales on: `$|£`
+split col: sales on: `$|£`
+merge col: sales2,sales3 as: 'column1'
+rename col: column1 to: 'amounts'
+settype col: amounts type: 'Float'
+replace col: amounts on: `,` with: ''
+drop col: sales2,sales3
+derive value: (sales1 == '$') ? amounts : ((sales1 == '£') ? (amounts * 1.44) : 'test') as: 'column1'
+settype col: column1 type: 'Float'
+set col: column1 value: numformat(column1, '$##,###.##')

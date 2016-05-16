@@ -1,0 +1,311 @@
+00:32:18.223 [main] TRACE com.example.logger.App - Entering Log4j Example.
+00:32:18.224 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.225 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.226 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.227 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.227 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.228 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.228 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.229 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.229 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.229 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.229 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.229 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.229 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.229 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.229 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.229 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.229 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.229 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.229 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.230 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.231 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.231 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.232 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.232 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.233 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.233 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.234 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.234 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Exception occurred when doing an IO Operation
+java.io.IOException: Nested IO
+	at com.example.logger.Hello.callMe(Hello.java:12) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+Caused by: java.lang.Exception: Derived Exception
+	... 2 more
+Caused by: java.lang.Exception: Base Exception
+	... 2 more
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.235 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.235 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.236 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.236 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.236 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.236 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.236 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.236 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.236 [main] ERROR com.example.logger.App - Some error occurred...
+java.lang.NullPointerException: Uninitialized variable
+	at com.example.logger.Hello.callMe(Hello.java:17) ~[classes/:?]
+	at com.example.logger.App.main(App.java:19) [classes/:?]
+00:32:18.236 [main] INFO  com.example.logger.App - Invoking method
+00:32:18.236 [main] INFO  com.example.logger.App - Returned from method
+00:32:18.236 [main] TRACE com.example.logger.App - Exiting Log4j Example.

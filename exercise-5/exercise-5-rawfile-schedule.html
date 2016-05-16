@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Big Data Bootcamp Dallas May 2016</title>
+    <meta name="description" content="Big Data Bootcamp Dallas May 2016                                           " />
+    <meta name="keywords" content="Hadoop Training, Spark Training, Shark Training, noSQL, Mongodb, cassandra, Neo4j, workshop, polyglot, R, rstudio, machine learning, data science, data warehousing, DW, business intelligence, SQL, couchbase, Yarn, Map reduce, HDFS, Hive, pig, hbase, ambari, cloudera, hortonworks, mapr, datastax                                           " />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <base href="http://globalbigdataconference.com/" />
+
+    <link rel="shortcut icon" href="Content/images/fevicon.ico" />
+    <link rel="stylesheet" type="text/css" href="Content/bdc-default-styles.css" />
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="Content/ie.css" />
+    <![endif]-->
+
+    <!---  Common Js [start] ------>
+    <script type="text/javascript" src="Scripts/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.9.2.custom.js"></script>
+    <!---  Common Js [end] ------>
+
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <!---  nth child [start] ------>
+    <script type="text/javascript" src="Scripts/IE9.js"></script>
+    <!---  nth child [end] ------>
+    <!---  default [start] ------>
+    <script type="text/javascript" src="Scripts/default.js"></script>
+    <script type="text/javascript" src="Scripts/accordion.js"></script>
+    <!---  default [end] ------>
+    <script type="text/javascript" src="Scripts/jquery.pjScrollUp.min.js"></script>
+
+    <script src="Scripts/Common.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(document).pjScrollUp({
+                imgSrc: "Content/images/toparrow.png"
+            });
+        });
+        // currency
+        $(function () {
+            $("#showCal").click(function () {
+                $("#Calc").toggle("slow");
+                $("#showCal").toggleClass("closed");
+            });
+        });
+
+    </script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#Reviews').dialog
+               ({
+                   autoOpen: false,
+                   width: 450,
+                   modal: true
+               });
+
+            
+            if ('1' == '1') {
+                $('#element_to_pop_up').bPopup();
+                $('#my-button').bind('click', function (e) {
+                    e.preventDefault();
+                    $('#element_to_pop_up').bPopup();
+                });
+            }
+
+            Common.mfadeout();
+        });
+
+        function clearReviews() {
+            Common.closedialog('Reviews');
+            $('#Description').val('');
+            $('#spanDescription').html('');
+        }
+
+        function Validate() {
+
+            if ($('#Description').val() == '') { $('#spanDescription').html('Please enter review / feedback.'); $('#Description').focus(); return false; } else { $('#spanDescription').html(''); }
+            if ($('#CompanyName').val() == '') { $('#spanCompanyName').html('Please enter your Company Name.'); $('#CompanyName').focus(); return false; } else { $('#spanCompanyName').html(''); }
+            return true;
+
+        }
+
+        function ReviewsSave() {
+            if (Validate()) {
+
+                var objTest = {};
+                objTest.Description = $('#Description').val();
+                objTest.CompanyName = $('#CompanyName').val();
+
+                $.ajax({
+                    url: '/Testimonials/PostTestimonial',
+                    type: 'POST',
+                    data: JSON.stringify(objTest),
+                    datatype: "JSON",
+                    contentType: 'application/json',
+                    success: function (result) {
+                        if (result.ok) {
+                            $("#divmessage").html(result.data);
+                            Common.closedialog('Reviews');
+                        }
+                        else {
+                            $("#spanDescription").html(result.data);
+                        }
+                    }
+                });
+            }
+        }
+
+    </script>
+    <script src="Scripts/quake.slider.js" type="text/javascript"></script>
+    <script src="Scripts/fshare.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.quake-slider').quake({
+                effects: ['swirlFadeIn', 'swirlFadeOut', 'randomFade', 'linearPeal', 'linearPealReverse', 'swirlFadeIn', 'swirlFadeOut',
+            'diagonalFade', 'blind', 'blindFade', 'explode', 'swirlFadeIn',
+            'mixBarsFancy', 'blindFadeReverse', 'slideIn', 'slideInFancy', 'swirlFadeOut'],
+                thumbnails: true,
+                captionOpacity: '0.3',
+                captionOrientations: ['top', 'right', 'bottom', 'left']
+            });
+
+            $('#floating-bar').fshare({ theme: 'default', upperLimitElementId: 'upper-limit-element', lowerLimitElementId: 'lower-limit-element' });
+        });
+    </script>
+    <link href="Content/quake.slider.css" rel="stylesheet" type="text/css" />
+    <link href="Content/fshare.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Scripts/bpopup.js"></script>
+</head>
+<body>
+    <!----Logo Section (Start)--->
+    <div class="clearfix wrapper red-bg">
+
+        <div class="clearfix inner-wrapper map-t">
+            <div class="clearfix block-row">
+                <div class="clearfix left-block">
+                    <div class="clearfix t-b-p20 logo tablet-t-c tablet-t-b-p10 mobile-b-p5">
+                        <a href="index.html">
+                            <img src="Content/images/bigdata-logo.png" alt="Logo" title="Logo" width="259" height="35" border="0" /></a>
+                    </div>
+                </div>
+                <div class="clearfix right-block tablet-t-c tabhorizontal-t-p10 tablet-t-p0 mobile-b-p5">
+                    <div class="clearfix t-p15 pull-right l-p25 social tabhorizontal-t-b-p10 tabhorizontal-l-p0 tablet-t-b-p0 mobilev-hide">
+                            <ul class="m0 list list-f h-social-icons">
+                                <li ><a class="twitter" href="https://twitter.com/bigdataconf" target="_blank">&nbsp;</a></li>
+                                <li ><a class="facebook"  href="http://www.facebook.com/globalbigdataconference" target="_blank">&nbsp;</a></li>
+                                <li ><a  class="linkedin"   href="https://www.linkedin.com/company/globalbigdataconference" target="_blank">&nbsp;</a></li>
+                                <li ><a class="youtube" href="http://www.youtube.com/globalbigdata" target="_blank">&nbsp;</a></li>
+                            </ul>
+                    </div>
+                    <div class="clearfix pull-right t-b-p20 loginandsign tabhorizontal-b-p10 tabhorizontal-t-p15 tablet-t-b-p0 t-r tablet-pull-n">
+                        <div class="clearfix t-p5 tablet-t-p0 dis-in">
+                            <ul class="nav">
+                                    <li><a href="logon.html">Login</a></li>
+                                    <li><span class="white-bg l-r-p15 t-b-p5 font-w-b border-radius17"><a href="register.html">Sign Up</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----Logo Section (End)--->
+    <!----Content Section (Start)--->
+    <div class="clearfix wrapper">
+        <div class="clearfix inner-wrapper">
+            <div class="clearfix tablet-visible mini-desktop-visible">
+                <div class="clearfix l-r-p5 t-b-p10 white-bg t-c">
+                    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+                    <script type="text/javascript">stLight.options({publisher: "27e22f32-d1a7-400d-8de5-3d2e5f619f4d", doNotHash: false, doNotCopy: true, hashAddressBar: false});</script>
+                    <span class='st_fblike_hcount' displaytext='Facebook Like'></span>
+                    <span class='st_twitter_hcount' displaytext='Tweet'></span>
+                    <span class='st_plusone_hcount' displaytext='Google +1'></span>
+                    <span class='st_linkedin_hcount mobile-t-m5 dis-in' displaytext='LinkedIn'></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix wrapper">
+        <div id="upper-limit-element" class="clearfix"></div>
+        <div class="clearfix inner-wrapper mobile-t-p5">
+            <div class="clearfix position-r">
+                <div id="floating-bar" class="tablet-hide mini-desktop-hide"></div>
+                <script>
+    $(document).ready(function () {
+        $('#EventId1').val('64');
+    });
+</script>
+    <script>
+
+        $(function () {
+
+            // The height of the content block when it's not expanded
+            var adjustheight = 50;
+            // The "more" link text
+            var moreText = "<img src='Content/images/more.png'/>";
+            // The "less" link text
+            var lessText = "<img src='Content/images/less.png'/>";
+
+            // Sets the .more-block div to the specified height and hides any content that overflows
+            $(".more-less .more-block").css('height', adjustheight).css('overflow', 'hidden');
+
+            // The section added to the bottom of the "more-less" div
+            $(".more-less").append('<p class="continued">[&hellip;]</p><a href="#" class="adjust"></a>');
+
+            $("a.adjust").html(moreText);
+
+            $(".adjust").toggle(function () {
+                $(this).parents("div:first").find(".more-block").css('height', 'auto').css('overflow', 'visible');
+                // Hide the [...] when expanded
+                $(this).parents("div:first").find("p.continued").css('display', 'none');
+                $(this).html(lessText);
+            }, function () {
+                $(this).parents("div:first").find(".more-block").css('height', adjustheight).css('overflow', 'hidden');
+                $(this).parents("div:first").find("p.continued").css('display', 'block');
+                $(this).html(moreText);
+            });
+        });
+
+    </script>
+<script>  
+    function ViewerCount(EventId, Type) {
+        
+        $.ajax({
+            url: '/Event/ViewerCountInsert',
+            type: 'POST',
+            data: { EventId: EventId, Type: Type },
+            datatype: "JSON",
+            success: function (result) {             
+                
+            }
+        });
+    }
+</script>
+
+<!----Menu Section (Start)--->
+<div class="clearfix wrapper ">
+  <div class="clearfix inner-wrapper map-t map-b t-p25 tablet-t-p0">
+
+    <div class="clearfix cell-row t-b-p5">
+      <div class="cell-3">
+        <h2 class="eventTitle l-h18 tablet-t-c t-m2">
+          <div class="clearfix red-t font12 open_sanssemibold">  May 13 to May 15 2016, Dallas, USA. </div>
+        </h2>
+      </div>
+      <div class="cell-9 tablet-t-c">
+        <div class="clearfix mobile-visible t-c t-b-p5 border2  black-border limaroon-bg l-h26 white-bg">
+            <a class="menu-link2 font22 mobile-font18 red-t" href="#menu3"> Event Registration <span class="help-inline v-align-t-b b-m3">
+                <span class="icon-bar b-m3 black-bg"> </span><span class="icon-bar b-m3 black-bg"> </span>
+                <span class="icon-bar b-m3 black-bg"> </span><span class="icon-bar black-bg"> </span></span></a></div>
+        <div class="clearfix responsive-menu2" id="menu3">
+          <div class="clearfix mobile-t-b-p10">
+            <ul class="innermenu pull-right dis-in m0 tablet-pull-n">
+              <li ><a href="64/dallas/big-data-bootcamp/event.html">Overview</a></li>
+                        <li ><a href="64/dallas/big-data-bootcamp/registration.html">Registration</a></li>
+                        <li class = active><a  href="64/dallas/big-data-bootcamp/schedule.html">Agenda</a></li>     
+                        <li ><a href="64/dallas/big-data-bootcamp/location.html">Location</a></li>     
+                            <li ><a  href="64/dallas/big-data-bootcamp/speakers.html">Speakers</a></li>     
+                            <li ><a  href="64/dallas/big-data-bootcamp/sponsors.html">Sponsors</a></li>     
+                            <li ><a  href="64/dallas/big-data-bootcamp/press.html">Press</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+
+<!----Menu Section (End)--->
+    <!-- main content -->
+            <div class="clearfix p8 gray-bg">
+                <div class="clearfix white-bg">
+                    <div class="clearfix right-section">
+                        <div class="block-row">
+                            <div class="clearfix left-block2">
+                                <div class="clearfix r-p10 tablet-r-p0">
+                                    <div class="clearfix l-r-p25 t-b-p15 tabhorizontal-p10">
+
+    <div class="clearfix b-p15 mobilev-b-p5">
+        <h1 class="m0 font24 red-t font-w-b mobilev-font18 link-hover-white l-h18">
+            <a href="64/big-data-bootcamp/suggesttopic.html" class="blink-btn pull-right l-r-m5 font-w6 font13 mobilev-font12 mobile-b-m5 mobile-r-m0">
+                <span class="message-icon l-p25">Suggest Topics / Workshop</span></a>
+            <a href="64/dallas/big-data-bootcamp/registration.html" class="blink-btn pull-right font-w6 font13 mobilev-font12">
+                <span class="message-icon l-p25">Event Press Registration</span></a>
+        <i class="red-t open_sansbold_italic">Agenda</i></h1>
+    </div>
+                                        <h3 class="font16 font-w7 b-m5 black-t t-m0 l-h26">Big Data Bootcamp</h3>
+<h3 class="font16 font-w7 b-m5 black-t">
+	Big Data Track</h3>
+<h4 class="font14 font-w7 b-m5 t-darkgray">
+	Day -1 ( May 13 Friday 7:30AM-7:30PM )</h4>
+<table align="center" border="0" cellpadding="3" cellspacing="0" class="table table-bordered font13 gray-t" width="100%">
+	<tbody>
+		<tr class="t-darkgray">
+			<th width="26%">
+				7:30 AM - 8:00 AM</th>
+			<th width="82%">
+				Registration</th>
+		</tr>
+		<tr>
+			<td>
+				8:00 AM - 11:00 AM</td>
+			<td>
+				Machine Learning with Spark (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41120/paul-hargis.html">Paul Hargis, Solutions Engineer, Hortonworks</a>) (<a href="http://globalbigdataconference.com/news/129080/interview-with-speaker-paul-hargis-solutions-engineer-hortonworks-at-dallas-big-data-bootcamp-may-13-15-2016.html">Check Out Speaker Interview</a>)</td>
+		</tr>
+		<tr>
+			<td>
+				11:00 AM - 11:45 AM</td>
+			<td>
+				Putting Together the Platform: Riak, Solr, Redis and Spark (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41132/alexander-sicular.html">Alexander Sicular, Solution Architect, Basho Technologies</a>)</td>
+		</tr>
+		<tr class="t-darkgray">
+			<th>
+				11:45 AM - 1:00PM</th>
+			<th>
+				Lunch Break</th>
+		</tr>
+		<tr>
+			<td>
+				1:00PM - 3:00PM</td>
+			<td>
+				Introduction And Fundamentals Of R (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41137/larry-dagostino.html">Larry D&#39;agostino, Sr. Statistician, Exeter Finance Corp &amp; Founder of Dallas R Users Group</a>)</td>
+		</tr>
+		<tr class="t-darkgray">
+			<th>
+				3:00PM - 3:10PM</th>
+			<th>
+				Break</th>
+		</tr>
+		<tr>
+			<td>
+				3:10PM - 3:50PM</td>
+			<td>
+				Value Analytics - Journey to Big Data &amp; Insights Driven Business (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/31081/sinan-gurman.html">Sinan Gurman, Director, Capgemini</a>)</td>
+		</tr>
+		<tr>
+			<td>
+				3:50PM - 4:50PM</td>
+			<td>
+				Deep Learning with TensorFlow: Understanding Tensors, Computation Graphs, Images, Text (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41133/viswanath-puttagunta.html">Viswanath Puttagunta, Manager, Linaro</a>)</td>
+		</tr>
+		<tr>
+			<td>
+				4:50PM - 7:30PM</td>
+			<td>
+				IBM Watson And R: Put Watson To Work For You Data Scientist (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41117/derek-franks.html">Derek Franks, Data Scientist, IBM</a>)</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+<table align="center" border="0" cellpadding="3" cellspacing="0" class="table table-bordered font13 gray-t" width="100%">
+</table>
+<h4 class="font14 font-w7 b-m5 t-darkgray">
+	Day -2 ( May 14 Saturday 7:45AM - 8:00PM )</h4>
+<table align="center" border="0" cellpadding="3" cellspacing="0" class="table table-bordered font13 gray-t" width="100%">
+	<tbody>
+		<tr>
+			<th width="26%">
+				7:45AM - 8:00AM</th>
+			<th width="82%">
+				Registration&nbsp;</th>
+		</tr>
+		<tr>
+			<td>
+				8:00 AM - 8:45 AM</td>
+			<td>
+				Top 10 Mistakes Companies Make In Forming Enterprise Data Governance (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/31049/william-mcknight.html">William Mcknight, President, McKnight Consulting Group</a>) (<a href="http://globalbigdataconference.com/news/129141/interview-with-speaker-william-mcknight-president-mcknight-consulting-at-dallas-big-data-bootcamp-may-13-15-2016.html">Check out Speaker Interview</a>)</td>
+		</tr>
+		<tr>
+			<td>
+				8:45 AM - 11:00 AM</td>
+			<td>
+				Data Wrangling - What, Why and How? [Industry state, business applicability] (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/31082/ashwini-kuntamukkala.html">Ashwini Kuntamukkala, Software Architect, Vizient</a>) (<span style="color:#006400;"><strong><a href="http://globalbigdataconference.com/news/129000/interview-with-ashwini-kuntamukkala-software-architect-vizient.html">Check out Speaker Interview</a></strong></span>) ( <strong><a href="https://www.youtube.com/watch?v=k3EZxLBOsi0">Webinar </a></strong>)</td>
+		</tr>
+		<tr>
+			<td>
+				11:00 AM - 11:45 AM</td>
+			<td>
+				Transform your Enterprise into Data-Driven Digital Business (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/31082/ashwini-kuntamukkala.html">Ashwini Kuntamukkala, Software Architect, Vizient</a>) (<span style="color:#00f;"><strong><a href="http://globalbigdataconference.com/news/129000/interview-with-ashwini-kuntamukkala-software-architect-vizient.html">Check Out Speaker Interview</a></strong></span>)</td>
+		</tr>
+		<tr class="t-darkgray">
+			<th>
+				11:45AM -- 1:00PM</th>
+			<th>
+				Lunch Break</th>
+		</tr>
+		<tr>
+			<td>
+				1:00 PM - 5:00 PM</td>
+			<td>
+				Spark Workshop(<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/30991/srini-penchikala.html">Srini Penchikala, Lead Editor, InfoQ</a>) (<strong><a href="http://globalbigdataconference.com/news/129070/interview-with-srini-penchikala-lead-editor-infoqcom-speaker-at-dallas-big-data-bootcamp-may-13-15-2016.html">Check out Speaker Interview</a></strong>):<br />
+				Spark Core, RDD (30 min)<br />
+				Spark SQL, Data Frames, Spark SQL Exercise - Exploratory Data Analysis Use Case (1 hr)<br />
+				Graph Data Analytics, Spark GraphX Exercise - Page Rank (1 hr)<br />
+				Spark MLlib Exercise - Language Prediction (1 hr)<br />
+				Spark ML Exercise - Spam Data Classification (30 min)</td>
+		</tr>
+		<tr>
+			<td>
+				5:00 PM - 7:00PM</td>
+			<td>
+				<p>
+					Building Real Time Search Dashbaords using Solr, Spark Streaming &amp; Kafka : Workshop (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41118/madhu-ganta.html">Madhu Ganta, Big Data Architect, Cloudera</a>)</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				7:00 PM - 8:00PM</td>
+			<td>
+				<p>
+					Ask me anything: Big Data Best Practices, Selecting the right tool for solving business problems, Hadoop application architectures, Spark, Storm, Hadoop/Spark operations for production systems, Developing a modern enterprise data strategy (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41118/madhu-ganta.html">Madhu Ganta, Big Data Architect, Cloudera</a>)</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h4 class="font14 font-w7 b-m5 t-darkgray">
+	Day - 3 ( May 15 Sun 8AM - 6:30PM )<br />
+	SPARK Workshop</h4>
+<table align="center" border="0" cellpadding="3" cellspacing="0" class="table table-bordered font13 gray-t" width="100%">
+	<tbody>
+		<tr class="t-darkgray">
+			<th width="26%">
+				8:00AM - 8:15AM</th>
+			<th width="82%">
+				Introduction to NoSQL&nbsp;</th>
+		</tr>
+		<tr>
+			<td>
+				8:15 AM - 11:45 AM</td>
+			<td>
+				Cassandra Workshop &amp; Solving Use Cases through brain storming (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/30991/srini-penchikala.html">Srini Penchikala, Lead Editor, InfoQ</a>) (<strong><a href="http://globalbigdataconference.com/news/129070/interview-with-srini-penchikala-lead-editor-infoqcom-speaker-at-dallas-big-data-bootcamp-may-13-15-2016.html">Check out Speaker Interview</a></strong>): <br />
+				Cassandra Introduction &amp; Setup Lab (1 hr)<br />
+				Cassandra Data Modeling (1 hr)<br />
+				Data modeling exercise - group brainstorming (1 hr)<br />
+				Cassandra Architecture (30 min)</td>
+		</tr>
+		<tr>
+			<td>
+				11:45 AM - 12:30 PM</td>
+			<td>
+				More &ldquo;Edge&rdquo;-Y Big Data With Graph Databases (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41122/dave-bechberger.html">Dave Bechberger, Architect, Expero</a>)</td>
+		</tr>
+		<tr>
+		</tr>
+		<tr class="t-darkgray">
+			<th>
+				12:30 PM - 1:30PM</th>
+			<th>
+				Lunch Break</th>
+		</tr>
+		<tr>
+			<td>
+				1:30 PM - 2:10 PM</td>
+			<td>
+				Cassandra Use Case For Email Messaging System (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41138/rafael-caraballo.html">Rafael Caraballo, Technical Architect, Time Waner Cable</a>)</td>
+		</tr>
+		<tr>
+			<td>
+				2:10 PM - 4:30 PM</td>
+			<td>
+				Microservices Workhop (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/30991/srini-penchikala.html">Srini Penchikala, Lead Editor, InfoQ</a>) (<strong><a href="http://globalbigdataconference.com/news/129070/interview-with-srini-penchikala-lead-editor-infoqcom-speaker-at-dallas-big-data-bootcamp-may-13-15-2016.html">Check out Speaker Interview</a></strong>)</td>
+		</tr>
+		<tr>
+			<td>
+				4:30 PM - 6:30 PM</td>
+			<td>
+				Containers and Docker Tutorial (<a href="http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/30991/srini-penchikala.html">Srini Penchikala, Lead Editor, InfoQ</a>) (<strong><a href="http://globalbigdataconference.com/news/129070/interview-with-srini-penchikala-lead-editor-infoqcom-speaker-at-dallas-big-data-bootcamp-may-13-15-2016.html">Check Out Speaker Interview</a></strong>)</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	NOTE: Agenda and speakers subject to change without notice</p>
+
+                                        <div class="clearfix t-p10 link-hover-white"><a href="/64/big-data-bootcamp/question-form.html" class="pull-right open_sanssemibold_italic font13 l-m5 blink-btn"><span class="message-icon l-p25">Ask a Question to Speaker</span></a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix right-block2">
+ 
+<script src="Scripts/jquery.easing.1.3.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".toggle_container").hide();
+        $(".expand_heading").toggle(function () {
+            $(this).addClass("active");
+        }, function () {
+            $(this).removeClass("active");
+        });
+        $(".expand_heading").click(function () {
+            $(this).next(".toggle_container").slideToggle("slow");
+        });
+    });
+</script>
+
+<div class="clearfix p20 tabhorizontal-p10">
+    <ul class="clearfix list-pn tablet-rightside-section m0">
+            <li class="tabletsection">
+                <ul class="showCourses m0 list-pn">
+                    <!-- Event Details -->
+                    <li>
+                        <div class="expand_heading title spcB_a">
+                            <h4 class="t-i font-w6 block-text font14"><a class="black-t dis-b" title="Related Events">Upcoming Events <span class="pull-right">
+                                <img src="content/images/red-arrow.jpg" alt=""></span></a></h4>
+                            <div class="clearfix p6 tablet-p0 b-m15 border-b"></div>
+                        </div>
+                        <div style="display: none;" class="toggle_container">
+                            <div class="relatedEvents">
+                                <ul class="clearfix relatedEvents m0 list-pn">
+                                        <li>
+                                            <div class="sepH_b"><a href="68/boston/big-data-bootcamp/event.html" class="black-t"><b>Big Data Bootcamp</b></a></div>
+                                            <h5 class="sml lightgray-t t-t-c t-b-m0">Boston, USA
+                                                <span class="dis-b">Aug 19 - 21 2016</span></h5>
+                                        </li>
+                                        <li>
+                                            <div class="sepH_b"><a href="70/santa-clara/4th-annual-global-big-data-conference/event.html" class="black-t"><b>4th Annual Global Big Data Conference</b></a></div>
+                                            <h5 class="sml lightgray-t t-t-c t-b-m0">Santa Clara, USA
+                                                <span class="dis-b">Aug 30 to Sep 01 - 2016</span></h5>
+                                        </li>
+                                        <li>
+                                            <div class="sepH_b"><a href="69/tampa/big-data-bootcamp/event.html" class="black-t"><b>Big Data Bootcamp </b></a></div>
+                                            <h5 class="sml lightgray-t t-t-c t-b-m0">Tampa, USA
+                                                <span class="dis-b">Dec 09 - 11 2016</span></h5>
+                                        </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </li>
+                    <!-- End Event Details -->
+                </ul>
+            </li>
+            <li class="tabletsectionsponsors">
+                <div class="clearfix t-b-p20 tabhorizontal-t-b-p10">
+                    <h4 class="t-i font-w6 black-t t-m0 font16">Sponsors</h4>
+                    <div class="clearfix p6 b-m15 border-b"></div>
+                    <ul class="lis m0 sponsors">
+                            <li class="border-b slide">
+                                <div class="p10 t-c">
+                                    <a href="http://www.datastax.com/" target="_blank">
+                                        <img src="http://globalbigdataconference.com/content/sponsor/757-sponsor.jpeg" width="151" border="0" /></a>
+                                </div>
+                            </li> 
+                    </ul>
+                </div>
+            </li>
+            <li class="tabletsectionsponsors">
+                <div class="clearfix t-b-p25 tabhorizontal-t-b-p10">
+                    <h4 class="t-i font-w6 black-t t-m0 font16">Media Partner</h4>
+                    <div class="clearfix p6 b-m15 border-b"></div>
+                    <ul class="lis m0 rightpress">
+                            <li class="border-b slide">
+                                <div class="p10 t-c">
+                                    <a href="http://www.datasciencecentral.com" target="_blank">
+                                        <img src="http://globalbigdataconference.com/content/press/548-press.png" width="151" border="0" /></a>
+                                </div>
+                            </li> 
+                    </ul>
+                </div>
+            </li>
+        <li class="tabletsection">
+            <!-- Twitter Details -->
+            <!-- Twitter Details -->
+  <div class="widget footer_widget t-p15">
+                <a class="twitter-timeline" height="400" href="https://twitter.com/bigdataconf" data-widget-id="357365675636969472">Tweets by bigdataconf</a>
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
+            </div>
+        <!-- Twitter Details -->
+
+            <!-- Twitter Details -->
+        </li>
+    </ul>
+</div> 
+<script type="text/javascript" src="Scripts/jquery.bxslider.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.sponsors').bxSlider({
+            auto: true,
+            pager: false,
+            speed: 3000,
+            pause: 6000,
+            autoHover: true,
+            moveSlides: 1,
+            mode: 'vertical',
+            controls: true,
+            slideWidth: 280,
+            minSlides: 6,
+            maxSlides: 6,
+            slideMargin: 5
+        });
+        $('.rightpress').bxSlider({
+            auto: true,
+            pager: false,
+            speed: 3000,
+            pause: 8000,
+            autoHover: true,
+            moveSlides: 1,
+            mode: 'vertical',
+            controls: true,
+            slideWidth: 280,
+            minSlides: 6,
+            maxSlides: 6,
+            slideMargin: 5
+        });
+    });
+</script>
+<!-- Banner Start -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- end main content -->
+
+            </div>
+        </div>
+    </div>
+
+    <!----Content Section (End)--->
+    <!---Footer Section (Start)-->
+    <div class="clearfix" id="lower-limit-element">
+        <div class="clearfix wrapper footer">
+            <div class="clearfix inner-wrapper">
+                <div class="clearfix block-row">
+                    <div class="clearfix left-block3">
+                        <h4 class="clearfix mobilev-hide">More</h4>
+                        <div class="clearfix mobilev-visible t-c t-b-p2 border2 whiteborder link-hover-white limaroon-bg l-h26"><a class="menu-link font22 white-t" href="#menu2">More <span class="help-inline v-align-t-b b-m3"><span class="icon-bar b-m3"></span><span class="icon-bar b-m3"></span><span class="icon-bar b-m3"></span><span class="icon-bar"></span></span></a></div>
+                        <div class="clearfix responsive-menu" id="menu2">
+                            <div class="clearfix mobilev-p10">
+                                <ul class="list twoR">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="logon.html">Log In</a></li>
+
+
+                                    <li><a href="register.html">Registration</a></li>
+                                    <li><a href="speakers.html">Speakers</a></li>
+                                    <li><a href="photo-gallery.html">Photos</a></li>
+
+
+                                    <li><a href="logon.html?ReturnUrl=videos.html">Video</a></li>
+                                    <li><a href="industry-news.html">Industry News</a></li>
+                                    <li><a href="testimonials.html">Testimonials</a></li>
+                                    <li><a href="request-to-attend/details/pg7.html">Request To Attend</a></li>
+                                    <li><a href="convince-your-manager/details/pg8.html">Convince Your Manager</a></li>
+                                    <li><a href="contact-us/details/pg11.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="clearfix right-block3">
+                        <div class="clearfix l-p10 mobilev-l-p0 mobilev-t-p10 mobilev-t-c">
+                            <h4>Follow us</h4>
+                            <ul class="clearfix dis-in">
+                                <li><a href="https://twitter.com/bigdataconf" target="_blank"><span class="tw r-m15">&nbsp;</span>Twitter</a></li>
+                                <li><a href="http://www.facebook.com/globalbigdataconference" target="_blank"><span class="fb r-m15">&nbsp;</span>Facebook</a></li>
+                                <li><a href="https://www.linkedin.com/company/globalbigdataconference" target="_blank"><span class="in r-m15">&nbsp;</span>LinkedIn</a></li>
+                                <li><a href="http://www.youtube.com/globalbigdata" target="_blank"><span class="yt r-m15">&nbsp;</span>Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="clearfix inner-wrapper">
+                <div class="bottom">
+                    <div class="clearfix sep-row">
+                        <div class="sep-5 clearfix mobile-t-c tabhorizontal-t-c">
+                            &copy; 2014 Global Big Data Conference. All Rights Reserved.
+                        </div>
+                        <div class="clearfix sep-3 t-c mobile-t-c tabhorizontal-t-c">
+                            <a class="dkgray2-tect" href="privacy-policy/details/pg10.html">Privacy policy</a> &nbsp; 
+                            <a class="dkgray2-tect" href="terms-of-use/details/pg12.html">Terms &amp; Conditions</a>
+                        </div>
+                        <div class="clearfix sep-4 t-r pull-right-n tabhorizontal-t-c">
+                            Design & Developed by <a href="http://arjunweb.com/" target="_blank" style="color: #ac7b07;">arjunweb<span class="help-inline">
+                                <img src="content/images/arjubwebsolutions.png" /></span></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Reviews" style="display: none;">
+        <div class="dilogbox">
+            <div class="dilog-body">
+                <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                    <tr>
+                        <td width="35%">Your Review / Feedback :
+                        </td>
+                        <td width="65%" class="f_error">
+                            <textarea id="Description" name="Description" class="span3" maxlength="300"></textarea>
+                            <label id="spanDescription" class="error"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="35%">Your Company :
+                        </td>
+                        <td width="65%" class="f_error">
+                            <input type="text" id="CompanyName" name="CompanyName" class="span3" maxlength="75" />
+                            <label id="spanCompanyName" class="error"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="35%"></td>
+                        <td width="65%">
+                            <input type="button" value="Save" onclick="javascript: ReviewsSave();" class="btn btn-primary btn-small" />
+                            <input type="button" onclick="javascript: clearReviews();" class="btn btn-primary btn-small btn-inverse" value="Cancel" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="element_to_pop_up" class="clearfix t-c mobilev-t-p0">
+        <a class="b-close">x</a>
+        <h3 class="t-c font-w6 white-text t-p50 font20 l-h24 mobilev-font14 mobilev-l-h24 l-r-m-auto" style="max-width:335px;">Get latest updates of Big Data Bootcamp<br />
+            sent to your inbox.</h3>
+        <div class="clearfix font13 white-text t-b-p10 mobilev-t-p0">
+            Weekly insight from industry insiders.<br />
+            Plus exclusive content and offers.
+        </div>
+        <div class="clearfix l-r-m-auto popup-width">
+            <div class="clearfix form-block">
+                <div class="form-left">
+                    <div class="clearfix r-p5">
+                        <input type="text" placeholder="First name" id="FirstName1" name="FirstName" class="input-block-level" style="border-radius: 25px; font-family: Arial, Helvetica, sans-serif;" />
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div class="clearfix l-p5">
+                        <input type="text" placeholder="Lastname" id="LastName1" name="LastName" class="input-block-level" style="border-radius: 25px; font-family: Arial, Helvetica, sans-serif;" />
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="EventId" id="EventId1" value="0" />
+            <div class="clearfix form-block">
+                <input type="text" placeholder="Mobile" id="CellPhone1" name="CellPhone" class="input-block-level" style="border-radius: 25px; font-family: Arial, Helvetica, sans-serif;" />
+            </div>
+            <div class="clearfix form-block">
+                <input type="text" placeholder="Title" id="Title1" name="Title" class="input-block-level" style="border-radius: 25px; font-family: Arial, Helvetica, sans-serif;" />
+            </div>
+            <div class="clearfix form-block">
+                <input type="text" placeholder="Company Name" id="Company1" name="Company" class="input-block-level" style="border-radius: 25px; font-family: Arial, Helvetica, sans-serif;" />
+            </div>
+            <div class="clearfix form-block">
+                <input type="text" placeholder="City" id="City1" name="City" class="input-block-level" style="border-radius: 25px; font-family: Arial, Helvetica, sans-serif;" />
+            </div>
+            <div class="clearfix form-block">
+                <input type="text" id="Email1" name="Email" placeholder="Email address" class="input-block-level" style="border-radius: 25px; font-family: Arial, Helvetica, sans-serif;" />
+            </div>
+            <div class="clearfix form-block t-c">
+                <input type="submit" value="Join Now" onclick="javascript: Newslettersubcribe('');" class="btn btn-warning btn-large l-r-p30" style="background: #faaf06; color: #222222; font-family: Arial, Helvetica, sans-serif; border-radius: 25px;" />
+            </div>
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript">
+        function CheckEmailAvailability(Email) {
+            var EventId = $('#EventId1').val();
+            var returnval = null;
+            $.ajax({
+                type: "POST",
+                url: '/Common/CheckNewsLetterSubscribeAvailability', // the URL of the controller action method
+                 data: { Email: Email,EventId:EventId }, // optional data
+                 datatype: "JSON",
+                 async: false,
+                 success: function (result) {
+                     if (result.ok) {
+                         returnval = result.data;
+                     }
+                 }
+             });
+             return returnval;
+         }
+         function ValidateNewsSuscribePop() {
+             if ($('#FirstName1').val() == '') { alert('Please enter your name.'); $('#FirstName1').focus(); return false; }
+             if ($('#LastName1').val() == '') { alert('Please enter your last name.'); $('#LastName1').focus(); return false; }
+             if ($('#CellPhone1').val() == '') { alert('Please enter mobile no.'); $('#CellPhone1').focus(); return false; }
+             if ($('#Title1').val() == '') { alert('Please enter title.'); $('#Title1').focus(); return false; }
+             if ($('#Company1').val() == '') { alert('Please enter company name.'); $('#Company1').focus(); return false; }
+             if ($('#City1').val() == '') { alert('Please enter your location.'); $('#City1').focus(); return false; }
+             //if ($('#State1').val() == '') { alert('Please enter your state.'); $('#State1').focus(); return false; }
+             //if ($('#Country1').val() == '') { alert('Please enter your country.'); $('#Country1').focus(); return false; }
+             if ($('#Email1').val() == '') { alert('Please enter email address.'); $('#Email1').focus(); return false; }
+             if (!Common.CheckEmail($('#Email1').val())) { alert('Please enter valid email address.'); $('#Email1').focus(); return false; }
+                            
+             return true;
+         }
+         function Newslettersubcribe() {
+             if (ValidateNewsSuscribePop()) {
+                 $('#popup').dialog('close');
+                 var Email = $('#Email1').val();
+                 var FirstName = $('#FirstName1').val();
+                 var LastName = $('#LastName1').val();
+                 var CellPhone = $('#CellPhone1').val();
+                 var City = $('#City1').val();
+                 //var State = $('#State1').val();
+                 //var Country = $('#Country1').val();
+                 var Company = $('#Company1').val();
+                 var Title = $('#Title1').val();
+                 var EventId = $('#EventId1').val();
+
+                 $.ajax({
+                     url: '/Common/NewsLetterSubscribe',
+                                    type: 'POST',
+                                    cache: false,
+                                    data: { Email: Email, FirstName: FirstName, LastName: LastName, City: City ,Title:Title,Company:Company ,EventId:EventId, CellPhone: CellPhone},
+                                    success: function (result) {                                            
+                                        $('#divmessage').html(result.data);
+                                        $('#Email1').val('');
+                                        $('#FirstName1').val('');
+                                        $('#CellPhone1').val('');
+                                        $('#City1').val('');
+                                        $('#LastName1').val('');
+                                        //$('#State1').val('');
+                                        //$('#Country1').val('');
+                                        $('#Title1').val('');
+                                        $('#Company1').val('');
+                                        $('#EventId1').val(0);
+                                        //$('#popup').dialog('close');
+                                        $('.b-close').click();
+                                    }
+                                });
+                            }
+                        } 
+    </script>
+    <!-- <div id="popup" style="display: none;" title="States">
+        <div class="dilogbox">
+            <div class="dilog-body">
+                <div class="clearfix dis-in pull-right" style="margin-top: -15px; margin-right: -15px;">
+                    <a onclick="$('#popup').dialog('close');" style="cursor: pointer;">
+                        <img src="content/images/close2.png" /></a>
+                </div>
+                <h3 class="l-h20 font-w6 b-m10 t-c red-t">Get the Global Big Data Conference Newsletter.</h3>
+                <div class="helpBlock sepH_b  t-c">
+                    <span class="sml">Weekly insight from industry insiders.</span>
+                    <span class="sml">Plus exclusive content and offers.</span>
+                </div>
+                <div id="divSubscribe">
+                    
+                    <input type="text" id="FirstName1" name="FirstName" placeholder="First Name" class="input-block-level" style="border-radius: 14px 14px 14px 14px; border: #f4f4f4 1px solid;" /><br />
+                    <input type="text" id="LastName1" name="LastName" placeholder="Last Name" class="input-block-level" style="border-radius: 14px 14px 14px 14px; border: #f4f4f4 1px solid;" /><br />
+                    <input type="text" id="City1" name="City" placeholder="Location" class="input-block-level" style="border-radius: 14px 14px 14px 14px; border: #f4f4f4 1px solid;" /><br />
+                    <input type="text" id="State1" name="State" placeholder="State" class="input-block-level" style="border-radius: 14px 14px 14px 14px; border: #f4f4f4 1px solid;" /><br />
+                    <input type="text" id="Country1" name="Country" placeholder="Country" class="input-block-level" style="border-radius: 14px 14px 14px 14px; border: #f4f4f4 1px solid;" /><br />
+                    <div class="cell-row">
+                        <div class="cell-9">
+                            <input type="text" id="Email1" name="Email" placeholder="Email address" class="input-block-level b-m0" style="border-radius: 14px 0px 0px 14px; border: #f4f4f4 1px solid;" />
+                        </div>
+                        <div class="cell-3">
+                            <button class="btn btn-inverse btn-block font-wb" type="button" onclick="javascript:Newslettersubcribe();" style="border-radius: 0px 14px 14px 0px;">
+                                Join Now
+                            </button>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    
+                    <script type="text/javascript">
+                        function ValidateNewsSuscribePop() {
+                            if ($('#FirstName1').val() == '') { alert('Please enter your name.'); $('#FirstName1').focus(); return false; }
+                            if ($('#LastName1').val() == '') { alert('Please enter your last name.'); $('#LastName1').focus(); return false; }
+                            if ($('#City1').val() == '') { alert('Please enter your location.'); $('#City1').focus(); return false; }
+                            if ($('#State1').val() == '') { alert('Please enter your state.'); $('#State1').focus(); return false; }
+                            if ($('#Country1').val() == '') { alert('Please enter your country.'); $('#Country1').focus(); return false; }
+                            if ($('#Email1').val() == '') { alert('Please enter email address.'); $('#Email1').focus(); return false; }
+                            if (!Common.CheckEmail($('#Email1').val())) { alert('Please enter valid email address.'); $('#Email1').focus(); return false; }
+
+                            return true;
+                        }
+                        
+                        function Newslettersubcribe() {
+                            if (ValidateNewsSuscribePop()) {
+                                $('#popup').dialog('close');
+                                var Email = $('#Email1').val();
+                                var FirstName = $('#FirstName1').val();
+                                var LastName = $('#LastName1').val();
+                                var City = $('#City1').val();
+                                var State = $('#State1').val();
+                                var Country = $('#Country1').val();
+
+                                $.ajax({
+                                    url: '/Common/NewsLetterSubscribe',
+                                    type: 'POST',
+                                    cache: false,
+                                    data: { Email: Email, FirstName: FirstName, LastName: LastName, City: City },
+                                    success: function (result) {                                            
+                                        $('#divmessage').html(result.data);
+                                        $('#Email1').val('');
+                                        $('#FirstName1').val('');
+                                        $('#City1').val('');
+                                        $('#LastName1').val('');
+                                        $('#State1').val('');
+                                        $('#Country1').val('');
+                                        $('#popup').dialog('close');
+                                    }
+                                });
+                            }
+                        }
+                    </script>
+                    
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!---Footer Section (End)-->
+
+    
+    
+    
+
+    <script type="text/javascript" src="Scripts/jquery.nivo.slider.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('#slider').nivoSlider({ 
+                directionNav: false
+            });
+        });
+    </script>
+    <!-- Banner End -->
+    <script>
+        $().ready(function () {
+            var $MenuDiv = $("#main-menu");
+            $(window).scroll(function () {
+                if ($(window).width() >= 980) {
+                    if ($(this).scrollTop() > 220) {
+                        $MenuDiv.addClass('menutop');
+                    }
+                    else if ($(this).scrollTop() <= 220) {
+                        $MenuDiv.removeClass('menutop');
+                    }
+                }
+                else if ($(window).width() < 980) {
+                    $MenuDiv.removeClass('menutop');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        jQuery( document ).ready( function( $ ) {
+	
+            $('body').addClass('js');
+            var $menu = $('#menu2'),
+                $menulink = $('.menu-link'),
+                $menuTrigger = $('.has-submenu > a');
+
+            $menulink.click(function(e) {
+                e.preventDefault();
+                $menulink.toggleClass('active');
+                $menu.toggleClass('active');
+            });
+
+            $menuTrigger.click(function(e) {
+                e.preventDefault();
+                var $this = $(this);
+                $this.toggleClass('active').next('ul').toggleClass('active');
+            }); 
+            <!-- Add Class Script [start] -->
+            $(document).ready(function(){	
+                var url = window.location.pathname, 
+                   urlRegExp = new RegExp(url.replace(/\/$/,'') + "$");
+                $('.menuactive li a').each(function(){
+                    if(urlRegExp.test(this.href.replace(/\/$/,''))){
+                        $(this).addClass('active');
+                    } 
+                }); 
+		
+            });	
+            <!-- Add Class Script [end] -->
+            });
+    </script>
+    <script type="text/javascript">
+        jQuery( document ).ready( function( $ ) {
+	
+            $('body').addClass('js');
+            var $menu = $('#menu3'),
+                $menulink = $('.menu-link2'),
+                $menuTrigger = $('.has-submenu > a');
+
+            $menulink.click(function(e) {
+                e.preventDefault();
+                $menulink.toggleClass('active');
+                $menu.toggleClass('active');
+            });
+
+            $menuTrigger.click(function(e) {
+                e.preventDefault();
+                var $this = $(this);
+                $this.toggleClass('active').next('ul').toggleClass('active');
+            }); 
+		 
+        });
+    </script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36853585-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</body>
+</html>

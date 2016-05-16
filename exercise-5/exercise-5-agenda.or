@@ -1,0 +1,195 @@
+[
+  {
+    "op": "core/column-addition-by-fetching-urls",
+    "description": "Create column content at index 1 by fetching URLs based on column Column 1 using expression grel:value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "newColumnName": "content",
+    "columnInsertIndex": 1,
+    "baseColumnName": "Column 1",
+    "urlExpression": "grel:value",
+    "onError": "set-to-blank",
+    "delay": 5000
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column tables at index 2 based on column content using expression grel:value.parseHtml().select(\"table\")[0].select(\"tr\").join(\"|\") + \"|\" + value.parseHtml().select(\"table\")[2].select(\"tr\").join(\"|\") + \"|\" + value.parseHtml().select(\"table\")[3].select(\"tr\").join(\"|\")",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": true,
+          "name": "table1",
+          "omitBlank": false,
+          "columnName": "table1",
+          "type": "list",
+          "selection": [
+            {
+              "v": {
+                "v": "\n<td> 11:00 AM - 11:45 AM</td>|\n<td> Putting Together the Platform: Riak, Solr, Redis and Spark (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41132/alexander-sicular.html\">Alexander Sicular, Solution Architect, Basho Technologies</a>)</td>",
+                "l": "\n<td> 11:00 AM - 11:45 AM</td>|\n<td> Putting Together the Platform: Riak, Solr, Redis and Spark (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41132/alexander-sicular.html\">Alexander Sicular, Solution Architect, Basho Technologies</a>)</td>"
+              }
+            },
+            {
+              "v": {
+                "v": "\n<td> 1:00PM - 1:40PM</td>|\n<td> Value Analytics - Journey to Big Data &amp; Insights Driven Business (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/31081/sinan-gurman.html\">Sinan Gurman, Director, Capgemini</a>)</td>",
+                "l": "\n<td> 1:00PM - 1:40PM</td>|\n<td> Value Analytics - Journey to Big Data &amp; Insights Driven Business (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/31081/sinan-gurman.html\">Sinan Gurman, Director, Capgemini</a>)</td>"
+              }
+            },
+            {
+              "v": {
+                "v": "\n<td> 1:40PM - 3:50PM</td>|\n<td> IBM Watson And R: Put Watson To Work For You Data Scientist (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41117/derek-franks.html\">Derek Franks, Data Scientist, IBM</a>)</td>",
+                "l": "\n<td> 1:40PM - 3:50PM</td>|\n<td> IBM Watson And R: Put Watson To Work For You Data Scientist (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41117/derek-franks.html\">Derek Franks, Data Scientist, IBM</a>)</td>"
+              }
+            },
+            {
+              "v": {
+                "v": "\n<td> 8:00 AM - 11:00 AM</td>|\n<td> Machine Learning with Spark (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41120/paul-hargis.html\">Paul Hargis, Solutions Engineer, Hortonworks</a>) (<a href=\"http://globalbigdataconference.com/news/129080/interview-with-speaker-paul-hargis-solutions-engineer-hortonworks-at-dallas-big-data-bootcamp-may-13-15-2016.html\">Check Out Speaker Interview</a>)</td>",
+                "l": "\n<td> 8:00 AM - 11:00 AM</td>|\n<td> Machine Learning with Spark (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41120/paul-hargis.html\">Paul Hargis, Solutions Engineer, Hortonworks</a>) (<a href=\"http://globalbigdataconference.com/news/129080/interview-with-speaker-paul-hargis-solutions-engineer-hortonworks-at-dallas-big-data-bootcamp-may-13-15-2016.html\">Check Out Speaker Interview</a>)</td>"
+              }
+            },
+            {
+              "v": {
+                "v": "\n<td> 4:00PM - 5:00PM</td>|\n<td> Deep Learning with TensorFlow: Understanding Tensors, Computation Graphs, Images, Text (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41133/viswanath-puttagunta.html\">Viswanath Puttagunta, Manager, Linaro</a>)</td>",
+                "l": "\n<td> 4:00PM - 5:00PM</td>|\n<td> Deep Learning with TensorFlow: Understanding Tensors, Computation Graphs, Images, Text (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41133/viswanath-puttagunta.html\">Viswanath Puttagunta, Manager, Linaro</a>)</td>"
+              }
+            },
+            {
+              "v": {
+                "v": "\n<td> 5:00PM - 8:00PM</td>|\n<td> Exploring Event Logs For Security With Splunk: Workshop (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41119/gregg-woodcock.html\">Gregg Woodcock, President &amp; CEO, Splunxter</a>)</td>",
+                "l": "\n<td> 5:00PM - 8:00PM</td>|\n<td> Exploring Event Logs For Security With Splunk: Workshop (<a href=\"http://globalbigdataconference.com/64/dallas/big-data-bootcamp/speaker-details/41119/gregg-woodcock.html\">Gregg Woodcock, President &amp; CEO, Splunxter</a>)</td>"
+              }
+            }
+          ]
+        }
+      ],
+      "mode": "record-based"
+    },
+    "newColumnName": "tables",
+    "columnInsertIndex": 2,
+    "baseColumnName": "content",
+    "expression": "grel:value.parseHtml().select(\"table\")[0].select(\"tr\").join(\"|\") + \"|\" + value.parseHtml().select(\"table\")[2].select(\"tr\").join(\"|\") + \"|\" + value.parseHtml().select(\"table\")[3].select(\"tr\").join(\"|\")",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/multivalued-cell-split",
+    "description": "Split multi-valued cells in column tables",
+    "columnName": "tables",
+    "keyColumnName": "Column 1",
+    "separator": "|",
+    "mode": "plain"
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column all-columns at index 3 based on column tables using expression grel:value.parseHtml().select(\"th\").join(\"|\") + \nvalue.parseHtml().select(\"td\").join(\"|\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "newColumnName": "all-columns",
+    "columnInsertIndex": 3,
+    "baseColumnName": "tables",
+    "expression": "grel:value.parseHtml().select(\"th\").join(\"|\") + \nvalue.parseHtml().select(\"td\").join(\"|\")",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column all-columns using expression grel:value.replace(/\\<.*?\\>/,\"\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "all-columns",
+    "expression": "grel:value.replace(/\\<.*?\\>/,\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column all-columns using expression value.unescape('html')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "all-columns",
+    "expression": "value.unescape('html')",
+    "onError": "keep-original",
+    "repeat": true,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column all-columns by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "all-columns",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "|",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Column 1",
+    "columnName": "Column 1"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column content",
+    "columnName": "content"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column tables",
+    "columnName": "tables"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column all-columns 1 to time-slot",
+    "oldColumnName": "all-columns 1",
+    "newColumnName": "time-slot"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column all-columns 2 to topic",
+    "oldColumnName": "all-columns 2",
+    "newColumnName": "topic"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column time-slot to event-time-slot",
+    "oldColumnName": "time-slot",
+    "newColumnName": "event-time-slot"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "invert": false,
+          "expression": "value",
+          "selectError": false,
+          "omitError": false,
+          "selectBlank": true,
+          "name": "event-time-slot",
+          "omitBlank": false,
+          "columnName": "event-time-slot",
+          "type": "list",
+          "selection": []
+        }
+      ],
+      "mode": "row-based"
+    }
+  }
+]

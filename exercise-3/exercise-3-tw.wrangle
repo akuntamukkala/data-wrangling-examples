@@ -1,0 +1,18 @@
+## Step 1
+
+splitrows col: column1 on: '\n'
+set col: column1 value: merge([matches([column1], `{start}{digit}`) ? 'Q' : '',column1])
+
+## Step 2
+
+splitrows col: column1 on: 'Q'
+split col: column1 on: `\n`
+split col: column2 on: `{delim-ws}`
+split col: column1 on: ' ' limit: 3
+replace col: column7 on: `{start}{delim}` with: ''
+rename col: column2 to: 'Time'
+rename col: column5 to: 'Thread'
+rename col: column6 to: 'Level'
+rename col: column7 to: 'Class'
+rename col: column4 to: 'Message'
+rename col: column3 to: 'Exception'

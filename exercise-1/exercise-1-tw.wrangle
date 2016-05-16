@@ -1,0 +1,6 @@
+splitrows col: column1 on: '\n'
+replace col: column1 on: `(th)|(st)` with: ''
+derive value: dateformat(column1, 'yyyy-MM-dd') as: 'column2'
+derive value: (day(column2) <= 12) && (month(column2) <= 12) as: 'column3'
+rename col: column2 to: 'Fixed_Dates'
+rename col: column3 to: 'To_Be_Reviewed'

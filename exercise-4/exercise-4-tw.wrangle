@@ -1,0 +1,21 @@
+splitrows col: column1 on: '\n' quote: '\"'
+replace col: column1 on: /^"/ with: ''
+replace col: column1 on: /"$/ with: ''
+delete row: matches([column1], `top_50_pop`)
+split col: column1 on: `{delim-ws}`
+split col: column3 on: `{delim-ws}`
+split col: column4 on: ` [`
+split col: column5 on: `] `
+extract col: column3 on: ` \({digit}+\)`
+replace col: column3 on: ` \({digit}+\)` with: ''
+merge col: column5,column6 as: 'column7'
+drop col: column5,column6
+set col: column7 value: trim(column7)
+replace col: column7 on: `\(` with: ''
+replace col: column7 on: `\)` with: ''
+rename col: column2 to: 'rank'
+rename col: column1 to: 'artist'
+rename col: column3 to: 'title'
+rename col: column4 to: 'company'
+rename col: column7 to: 'year'
+sort order: -rank
